@@ -15,3 +15,8 @@ int main()
     scanf("%lf", &arrivalTime[c] );
     process[c]=c+1;
   }
+
+  printf("\n\n\t\t ********* ENTERED VALUES ARE : *********\n\n");
+  printf("\t\t**************************\n");
+  printf("\t\t| Process | Arrival Time | Burst Time |\n");
+  printf("\t\t*************************\n");
