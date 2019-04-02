@@ -20,3 +20,32 @@ int main()
   printf("\t\t**************************\n");
   printf("\t\t| Process | Arrival Time | Burst Time |\n");
   printf("\t\t*************************\n");
+  for(c=0;c<a;c++)
+  {
+    printf("\t\t|  P[%0.0lf]   |       %0.0lf      |     %0.0lf      |\n",process[c],arrivalTime[c],burstTime[c]);
+  }
+    printf("\t\t**************************\n");
+
+
+  printf("\n\n\t\t********* Sorting Processes according to Arrivaltime ***********\n");
+
+  for(c=0;c<a;c++)
+  {
+    for(d=0;d<a;d++)
+    {
+      if(arrivalTime[c]<arrivalTime[d])
+      {
+        
+        temp = burstTime[d];
+        burstTime[d] = burstTime[c];
+        burstTime [c] = temp;
+	temp = process[d];
+        process[d] = process[c];
+        process[c] = temp;
+                 temp = arrivalTime[d];
+        arrivalTime[d] = arrivalTime[c];
+        arrivalTime[c] = temp;
+      
+      }
+    }
+  }
