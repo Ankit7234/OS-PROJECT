@@ -48,4 +48,45 @@ int main()
       
       }
     }
+  } 
+  printf("\n\n\t\t ************* NOW VALUES ARE ******************\n\n");
+  printf("\t\t *******************************\n");
+  printf("\t\t| Process | Arrival Time | Burst Time |\n");
+  printf("\t\t**********************************\n");
+  for(c=0;c<a;c++)
+  {
+    printf("\t\t|  P[%0.0lf]   |       %0.0lf      |     %0.0lf      |\n",process[c],arrivalTime[c],burstTime[c]);
   }
+    printf("\t\t********************************\n");
+
+
+
+
+
+  long int e = 1;
+  double f_time = 0;
+  for(d=0;d<a;d++)
+  {
+    f_time = f_time + burstTime[d];
+    min = burstTime[e];
+
+    for(c=e;c<a;c++)
+    {
+      if((f_time >= arrivalTime[c])&&(burstTime[c]<min))
+      {
+        temp = burstTime[e];
+        burstTime[e] = burstTime[c];
+        burstTime[c] = temp;
+
+        temp = arrivalTime[e];
+        arrivalTime[e] = arrivalTime[c];
+        arrivalTime[c] = temp;
+
+        temp = process[e];
+        process[e] = process[c];
+        process[c] = temp;
+      }
+    }
+    e++;
+  }
+
