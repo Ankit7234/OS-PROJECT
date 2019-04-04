@@ -89,4 +89,28 @@ int main()
     }
     e++;
   }
+	 waitingTime[0] = 0;
+  for(c=1;c<a;c++)
+  {
+    sum += burstTime[c-1];
+    waitingTime[c] = sum - arrivalTime[c];
+    wait_final += waitingTime[c]; 
+  }
+  wait_avg = wait_final/a;
+  for(c=0;c<a;c++)
+  {
+    sum2 += burstTime[c];
+    turnaroundTime[c] = sum2 - arrivalTime[c];
+    turnaround_final += turnaroundTime[c];
+  }
+  turnaround_avg=turnaround_final/a;
+printf("\n\n\t\t ******************* NOW VALUES ARE ****************\n\n");
+  printf("\t\t****************************************\n");
+  printf("\t\t| Process | Arrival Time | Burst Time |  Waiting Time  |  Turn Around Time  |\n");
+  printf("\t\t**********************************************************\n");
+  for(c=0;c<a;c++)
+  {
+    printf("\t\t|  P[%0.0lf]   |       %0.0lf      |     %0.0lf      |        %0.0lf       |         %0.0lf          |\n",process[c],arrivalTime[c],burstTime[c],waitingTime[c],turnaroundTime[c]);
+  }
+    printf("\t\t***************************************************\n");
 
