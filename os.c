@@ -114,3 +114,19 @@ printf("\n\n\t\t ******************* NOW VALUES ARE ****************\n\n");
   }
     printf("\t\t***************************************************\n");
 
+/*Now according to the given formula in the question we have to prioritise the process by ->
+      Priority = 1+ Waiting time / Estimated run time
+  */
+ 
+  
+  completionTime[0] = burstTime[0];
+  for(c=1;c<a;c++)
+  {
+    completionTime[c] = completionTime[c-1] + burstTime[c];
+  }
+
+  for(c=0;c<a;c++)
+  {
+    priority[c] = 1+waitingTime[c]/completionTime[c];
+    printf("%lf\n",priority[c]);
+  }
