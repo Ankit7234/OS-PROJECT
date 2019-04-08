@@ -130,3 +130,20 @@ printf("\n\n\t\t ******************* NOW VALUES ARE ****************\n\n");
     priority[c] = 1+waitingTime[c]/completionTime[c];
     printf("%lf\n",priority[c]);
   }
+ printf("\n\t ***************** FINAL VALUES ARE ***************\n");
+  printf("\t\t****************************************\n");
+  printf("\t\t| Process | Arrival Time | Burst Time |  Waiting Time  |  Turn Around Time  |\n");
+  printf("\t\t***************************************************************************\n");
+  printf("\t\t|  P[%0.0lf]   |       %0.0lf      |     %0.0lf      |        %0.0lf       |         %0.0lf          |\n",process[0],arrivalTime[0],burstTime[0],waitingTime[0],turnaroundTime[0]);
+  for(c=a-1;c>0;c--)
+  {
+    printf("\t\t|  P[%0.0lf]   |       %0.0lf      |     %0.0lf      |        %0.0lf       |         %0.0lf          |\n",process[c],arrivalTime[c],burstTime[c],waitingTime[c],turnaroundTime[c]);
+  }
+    printf("\t\t\t**************************************************************************\n");
+
+  printf("\n\n\t\t ******** AVERAGE TURN ARROUND TIME *******: %lf",turnaround_avg);
+  printf("\n\t\t*********** AVERAGE WAITING TIME ************     : %lf\n\n",wait_avg);
+	
+  getch();
+  return 0;
+}
